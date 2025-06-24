@@ -6,7 +6,7 @@ from core.index_manager import initialize_index
 load_env()
 
 st.set_page_config(
-    page_title="Chatbot Once Once Seguros",
+    page_title="Chatbot self-hosted",
     page_icon="🤖",
     layout="centered",
     initial_sidebar_state="expanded"
@@ -25,8 +25,8 @@ def initialize_session_state():
 
 # Chat interface section
 def chat_interface():
-    st.title("💬 Chatbot Once Once Seguros")
-    st.caption("🚀 Chatbot sobre Once Once Seguros usando LLMs de código abierto")
+    st.title("💬 Chatbot self-hosted")
+    st.caption("🚀 Chatbot RAG usando LLMs de código abierto")
 
     # Display chat messages
     for message in st.session_state.messages:
@@ -34,7 +34,7 @@ def chat_interface():
             st.markdown(message["content"])
 
     # Handle user input
-    if prompt := st.chat_input("Pregunta sobre Once Once Seguros"):
+    if prompt := st.chat_input("Pregunta sobre tus documentos"):
         st.session_state.messages.append({"role": "user", "content": prompt})
 
         with st.chat_message("user"):
@@ -44,7 +44,7 @@ def chat_interface():
             message_placeholder = st.empty()
 
 
-            with st.spinner("Buscando en la cabeza de Karlita..."):
+            with st.spinner("Buscando en tus documentos..."):
                 try:
                     full_response = query_engine.query(prompt)
                 except Exception as e:
