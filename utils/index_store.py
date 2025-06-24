@@ -5,7 +5,7 @@ from pymongo import MongoClient
 
 
 mongo_uri = os.getenv("MONGO_URI", "mongodb://localhost:27017")
-mongo_db = os.getenv("MONGO_DATABASE", "onceonce_rag")
+mongo_db = os.getenv("MONGO_DATABASE", "custom_rag")
 
 db = MongoClient(host=mongo_uri).get_database(name=mongo_db)
 
