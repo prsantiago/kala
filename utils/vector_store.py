@@ -3,8 +3,8 @@ from llama_index.core.indices import vector_store
 from llama_index.vector_stores.chroma import ChromaVectorStore
 import chromadb
 
-chroma_db_name = os.getenv("CHROMA_DATABASE", "./onceonce_db")
-chroma_collection_name = os.getenv("CHROMA_COLLECTION", "onceonce_rag")
+chroma_db_name = os.getenv("CHROMA_DATABASE", "./kala_db")
+chroma_collection_name = os.getenv("CHROMA_COLLECTION", "kala_rag")
 
 def build_chroma_vector_store():
     exists = os.path.isdir(chroma_db_name)
